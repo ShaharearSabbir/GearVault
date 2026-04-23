@@ -4,8 +4,8 @@ import jwt from "jsonwebtoken";
 export class Jwt {
   private static secret = env.JWT_SECRET;
 
-  static sign(payload: string | object | Buffer) {
-    return jwt.sign(payload, this.secret);
+  static sign(payload: string | object | Buffer, options?: jwt.SignOptions) {
+    return jwt.sign(payload, this.secret, options);
   }
 
   static verify(token: string) {

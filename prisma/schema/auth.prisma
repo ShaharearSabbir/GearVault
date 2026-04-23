@@ -11,7 +11,7 @@ model User {
     district      String?
     thana         String?
     mobile        String?
-    emailVerified DateTime?
+    emailVerified Boolean   @default(false)
     role          Role      @default(USER)
     isActive      Boolean   @default(true)
     createdAt     DateTime  @default(now())
