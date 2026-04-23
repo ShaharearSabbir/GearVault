@@ -1,26 +1,37 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Backgrounds & Cards */
+  --color-vault-bg: #ffffff;
+  --color-vault-card: #f8fafc;
+
+  /* Brand Colors */
+  --color-vault-primary: #0f172a; /* Deep Navy/Onyx */
+  --color-vault-accent: #3b82f6; /* Electric Blue */
+
+  /* Borders & Inputs */
+  --color-vault-border: #e2e8f0;
+  --color-vault-input: #f1f5f9;
+
+  /* Text States */
+  --color-vault-main: #0f172a;
+  --color-vault-muted: #64748b;
+  --color-vault-error: #ef4444;
+
+  /* Custom Animations if you want them */
+  --animate-shimmer: shimmer 2s infinite linear;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+@variant dark (&:where(.dark, .dark *));
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.dark {
+  --color-vault-bg: #020617;
+  --color-vault-card: #0f172a;
+  --color-vault-primary: #f8fafc;
+  --color-vault-accent: #60a5fa;
+  --color-vault-border: #1e293b;
+  --color-vault-input: #1e293b;
+  --color-vault-main: #f8fafc;
+  --color-vault-muted: #94a3b8;
 }

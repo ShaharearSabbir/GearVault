@@ -1,0 +1,26 @@
+model User {
+    id            String    @id @default(uuid())
+    email         String    @unique
+    password      String
+    name          String?
+    image         String?
+    DOB           DateTime?
+    NID           String?
+    address       String?
+    division      String?
+    district      String?
+    thana         String?
+    mobile        String?
+    emailVerified DateTime?
+    role          Role      @default(USER)
+    isActive      Boolean   @default(true)
+    createdAt     DateTime  @default(now())
+    updatedAt     DateTime  @updatedAt
+
+    @@map("users")
+}
+
+enum Role {
+    USER
+    ADMIN
+}

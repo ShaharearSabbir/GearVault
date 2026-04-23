@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to GearVault</title>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background-color: #f8fafc;
+      font-family:
+        -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto,
+        Helvetica, Arial, sans-serif;
+    "
+  >
+    <table
+      role="presentation"
+      width="100%"
+      cellspacing="0"
+      cellpadding="0"
+      border="0"
+      style="background-color: #f8fafc"
+    >
+      <tr>
+        <td align="center" style="padding: 40px 0">
+          <table
+            role="presentation"
+            width="100%"
+            style="
+              max-width: 600px;
+              background-color: #ffffff;
+              border: 1px solid #e2e8f0;
+              border-radius: 16px;
+              overflow: hidden;
+              box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            "
+          >
+            <tr>
+              <td
+                align="center"
+                style="padding: 40px 40px 20px 40px; background-color: #0f172a"
+              >
+                <div
+                  style="
+                    background-color: #3b82f6;
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 12px;
+                    line-height: 48px;
+                    text-align: center;
+                    color: #ffffff;
+                    font-weight: bold;
+                    font-size: 24px;
+                    margin-bottom: 16px;
+                  "
+                >
+                  G
+                </div>
+                <h1
+                  style="
+                    color: #ffffff;
+                    margin: 0;
+                    font-size: 24px;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                  "
+                >
+                  GearVault
+                </h1>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding: 40px">
+                <h2 style="color: #0f172a; margin-top: 0; font-size: 22px">
+                  Establish Your Access,
+                </h2>
+                <p style="color: #64748b; font-size: 16px; line-height: 1.6">
+                  Welcome to the elite community for premium gear enthusiasts.
+                  Before you can start listing or discovering gear in the vault,
+                  we need to verify your credentials.
+                </p>
+
+                <div style="padding: 20px 0; text-align: center">
+                  <a
+                    href="<%= verificationUrl %>"
+                    style="
+                      display: inline-block;
+                      padding: 16px 32px;
+                      background-color: #0f172a;
+                      color: #ffffff;
+                      text-decoration: none;
+                      border-radius: 10px;
+                      font-weight: bold;
+                      font-size: 14px;
+                      text-transform: uppercase;
+                      letter-spacing: 1px;
+                    "
+                  >
+                    Verify My Account
+                  </a>
+                </div>
+
+                <p
+                  style="
+                    color: #64748b;
+                    font-size: 14px;
+                    line-height: 1.6;
+                    margin-top: 20px;
+                  "
+                >
+                  If the button above doesn't work, copy and paste this link
+                  into your browser:
+                  <br />
+                  <span style="color: #3b82f6; word-break: break-all"
+                    ><%= verificationUrl %></span
+                  >
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td
+                style="
+                  padding: 20px 40px;
+                  background-color: #f1f5f9;
+                  border-top: 1px solid #e2e8f0;
+                  text-align: center;
+                "
+              >
+                <p style="color: #94a3b8; font-size: 12px; margin: 0">
+                  © 2026 GearVault. All rights reserved. <br />
+                  This is a mandatory security email.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
