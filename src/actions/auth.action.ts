@@ -101,3 +101,14 @@ export const getUser = async () => {
   return user;
 
 };
+
+
+export const logout = async () => {
+  await Cookie.clear("accessToken");
+  await Cookie.clear("refreshToken");
+
+  return {
+    success: true,
+    message: "Logout successful.",
+  };
+};

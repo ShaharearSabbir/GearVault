@@ -3,11 +3,13 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { loginUser } from "@/actions/auth.action";
+import { useUser } from "@/context/UserContext";
 
 export default function LoginForm() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const { login } = useUser();
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -25,7 +27,7 @@ export default function LoginForm() {
       setLoading(false);
       return;
     }
-
+    login(result.user!);
     router.push("/");
   }
 
