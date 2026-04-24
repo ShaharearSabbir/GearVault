@@ -16,7 +16,6 @@ export default async function StatsBar() {
 
   const brands = topBrands.map((brand) => ({
     brand: brand.brand,
-    count: brand._count.brand,
   }));
 
   return (
