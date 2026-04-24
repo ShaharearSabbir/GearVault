@@ -1,3 +1,4 @@
+import Footer from "@/components/commonLayout/Footer/Footer";
 import Navbar from "@/components/commonLayout/Navbar/Navbar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -5,6 +6,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <section>
       <Navbar />
       {children}
+      <Footer />
     </section>
   );
 }

@@ -1,0 +1,55 @@
+model Gear {
+    id           String  @id @default(uuid())
+    name         String
+    brand        String
+    modelNumber  String?
+    serialNumber String  @unique
+    dailyRate    Decimal
+
+    // Categorization
+    categoryId String
+    category   Category @relation(fields: [categoryId], references: [id])
+
+    // Status & Condition
+    status    GearStatus @default(AVAILABLE)
+    condition Condition  @default(EXCELLENT)
+
+    // Detailed Specs (JSON for flexibility across different gear types)
+    description    String? 
+    specifications Json?
+
+    // Media
+    images String[]
+
+    // Ownership & Tracking
+    ownerId String
+    owner   User   @relation(fields: [ownerId], references: [id])
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@index([ownerId])
+    @@index([brand])
+    @@map("gears")
+}
+
+enum GearStatus {
+    AVAILABLE
+    IN_USE
+    MAINTENANCE
+    RETIRED
+}
+
+enum Condition {
+    NEW
+    EXCELLENT
+    GOOD
+    FAIR
+    POOR
+}
+
+model Category {
+    id    String @id @default(uuid())
+    name  String @unique
+    gears Gear[]
+}

@@ -1,15 +1,31 @@
 import { PrismaClient } from "@/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
-const globalForPrisma = global as unknown as {
-  prisma: PrismaClient;
+import pg from "pg";
+
+const connectionString = process.env.DATABASE_URL;
+
+
+const globalForPrisma = globalThis as unknown as {
+  prisma: PrismaClient | undefined;
 };
-const adapter = new PrismaPg({
-  connectionString: process.env.DATABASE_URL,
-});
-const prisma =
-  globalForPrisma.prisma ||
-  new PrismaClient({
+
+
+const createPrismaClient = () => {
+  if (!connectionString) {
+    throw new Error("DATABASE_URL is not defined in environment variables");
+  }
+
+  const pool = new pg.Pool({ connectionString });
+  const adapter = new PrismaPg(pool);
+
+  return new PrismaClient({
     adapter,
   });
-if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+};
+
+
+const prisma = globalForPrisma.prisma ?? createPrismaClient();
+
 export default prisma;
+
+if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
