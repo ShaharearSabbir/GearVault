@@ -1,6 +1,6 @@
 export default function CTA() {
   return (
-    <section className="py-20 bg-slate-950">
+    <section className="py-20 bg-slate-950/30">
       <div className="container mx-auto px-6">
         <div className="relative overflow-hidden bg-blue-600 rounded-[2.5rem] p-12 lg:p-20 text-center">
           <div className="relative z-10">

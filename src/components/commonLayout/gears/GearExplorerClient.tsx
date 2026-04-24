@@ -84,7 +84,7 @@ export default function GearExplorerClient({ initialGears, categories }: any) {
             <input
               type="text"
               value={search}
-              placeholder="Search database..."
+              placeholder="search gears.."
               className="w-full pl-12 pr-4 py-3.5 bg-white border border-slate-200 rounded-2xl focus:ring-4 focus:ring-blue-500/10 outline-none transition-all"
               onChange={(e) => setSearch(e.target.value)}
             />

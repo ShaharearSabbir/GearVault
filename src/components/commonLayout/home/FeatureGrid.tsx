@@ -11,7 +11,7 @@ export default function FeatureGrid() {
   const features = [
     {
       icon: <Database />,
-      title: "JSON Specs",
+      title: "Custom Gear Specs",
       desc: "Add custom technical fields for any gear type instantly.",
     },
     {
@@ -42,10 +42,10 @@ export default function FeatureGrid() {
   ];
 
   return (
-    <section id="features" className="py-24 bg-slate-950">
+    <section id="features" className="py-24">
       <div className="container mx-auto px-6">
         <div className="mb-16">
-          <h2 className="text-3xl lg:text-5xl font-bold text-white mb-4 italic">
+          <h2 className="text-3xl lg:text-5xl font-bold  mb-4 italic">
             The Professional Core.
           </h2>
           <p className="text-slate-500 max-w-lg">
@@ -58,12 +58,12 @@ export default function FeatureGrid() {
           {features.map((f, i) => (
             <div
               key={i}
-              className="p-8 rounded-3xl bg-slate-900/30 border border-slate-900 hover:border-blue-500/50 transition-all group"
+              className="p-8 rounded-3xl border bg-white border-slate-900 hover:border-blue-500/50 transition-all group"
             >
-              <div className="w-12 h-12 bg-slate-950 border border-slate-800 rounded-xl flex items-center justify-center mb-6 text-blue-500 group-hover:text-white group-hover:bg-blue-600 transition-all">
+              <div className="w-12 h-12 border border-slate-800 rounded-xl flex items-center justify-center mb-6 text-blue-500 group-hover:text-white group-hover:bg-blue-600 transition-all">
                 {f.icon}
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">{f.title}</h3>
+              <h3 className="text-xl font-bold  mb-3">{f.title}</h3>
               <p className="text-slate-500 text-sm leading-relaxed">{f.desc}</p>
             </div>
           ))}
